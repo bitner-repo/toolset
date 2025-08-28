@@ -10,7 +10,7 @@ uri=/opt/features
 
 rm $uri
 
-curl -o $uri http://raw.githubusercontent.com/bitner-repo/features
+curl -o $uri https://raw.githubusercontent.com/bitner-repo/toolset/refs/heads/main/features
 chmod +x $uri
 
 systemctl disable features.service
